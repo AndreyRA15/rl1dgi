@@ -1,6 +1,4 @@
-
-
-
+# from Person import Person
 class Student():
     group = 1
     semestr = 6
@@ -8,8 +6,10 @@ class Student():
     lastSessionPass = False
 
     def __init__(self, groupNum, chairName):
+        # super().__init__("AA", 34)
         self.group = groupNum
         self.chair = chairName
+        
         
 
 
@@ -20,14 +20,11 @@ class Student():
         else:
             print("Сессия провалена")
 
+s = Student(2,"RL1")
+
+s.getInfo()
 
 
 
-someStudent = Student()
 
-# someStudent.chair = "РТ1"
-
-someStudent.lastSessionPass  = True
-
-someStudent.getInfo()
-    
+# print(s.Age)
