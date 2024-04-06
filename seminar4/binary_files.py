@@ -11,7 +11,7 @@ sampleRate = struct.unpack_from('i', data, offset=24)[0]
 print(sampleRate)
 
 
-pureAdcData =[a[0] for a in struct.iter_unpack("h",data[45::2])]
+pureAdcData =[a[0] for a in struct.iter_unpack("h",data[45::1])]
 
 # print(pureAdcData)
 
