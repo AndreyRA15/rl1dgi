@@ -1,20 +1,6 @@
 {
     "configurations": [
         {
-            "name": "StartServer",
-            "type": "debugpy",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/seminar6",
-            "module": "SyncTcpServer",
-        },
-        {
-            "name": "StartClient",
-            "type": "debugpy",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/seminar6",
-            "module": "SyncTcpClient",
-        },
-        {
             "name": "ExampleServer",
             "type": "debugpy",
             "request": "launch",
@@ -27,6 +13,13 @@
             "request": "launch",
             "cwd": "${workspaceFolder}/seminar6",
             "module": "exampleClient",
+        },
+        {
+            "name": "ExampleCom",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/seminar7",
+            "module": "exampleComPort",
         }
     ]
 }
