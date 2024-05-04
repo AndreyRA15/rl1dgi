@@ -15,11 +15,18 @@
             "module": "exampleClient",
         },
         {
-            "name": "ExampleCom",
+            "name": "ExampleComClient",
             "type": "debugpy",
             "request": "launch",
             "cwd": "${workspaceFolder}/seminar7",
-            "module": "exampleComPort",
+            "module": "exampleComPortClient",
+        },
+        {
+            "name": "ExampleComDevice",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/seminar7",
+            "module": "exampleComPortDevice",
         }
     ]
 }

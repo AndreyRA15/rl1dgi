@@ -12,6 +12,8 @@ class ComPortClient():
             self.Connected = False
             print("Соединение не установлено")
 
+    def Disconnect(self):
+        self.port.close()
 
     def Send(self, data):
         if(type(data) is bytes):
@@ -28,7 +30,7 @@ class ComPortClient():
         
     def ReceiveBytes(self):
         print("Ожидание ответа...")
-        resp = self.port.read_all()
+        resp = self.port.read_until()
         print("Ответ получен:", resp.decode(helper.encoding))
         return resp
 
@@ -39,5 +41,4 @@ class ComPortClient():
     def Query(self, answer):
         self.Send(answer)
         return self.ReceiveStr()
-    
     
