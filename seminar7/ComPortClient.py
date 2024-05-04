@@ -2,17 +2,19 @@ import serial
 import helper
 
 class ComPort():
-    def Connect(self, portName, baudRate):
-        print("Попытка установить соединение", portName)
-        try:
-            self.port = serial.Serial(port=portName, baudrate=baudRate)
-            self.Connected = True
-            print("Соединение установлено")
-        except serial.SerialException:
-            self.Connected = False
-            print("Невозможно установить соединение")
-        except:
-            print("Вознкла другая ошибка")
+    Connected = False
+    def Connect(self, portName, baudRate, byteSize = 8, stopBits = 1):
+        if(not self.Connected):
+            print("Попытка установить соединение", portName)
+            try:
+                self.port = serial.Serial(port=portName, baudrate=baudRate, bytesize=byteSize, stopbits=stopBits)
+                self.Connected = True
+            except serial.SerialException:
+                print("Проверьте првильность установки параметров")
+            except:
+                print("Вознкла другая ошибка")
+            finally:
+                print(("Соединение установлено" if self.Connected else "Соединение не установлено"))
 
     def Disconnect(self):
         self.port.close()

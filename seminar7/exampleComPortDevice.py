@@ -1,5 +1,5 @@
 from ComPortClient import ComPort
-port = "COM5"
+port = "COM3"
 
 
 client = ComPort()
@@ -10,14 +10,15 @@ def requestProcessing(request:str):
         responce = "I am server on port " + str(port)
     else:
         responce = "ERROR"
-    return responce
+    return responce + "\n"
 
 while True:
     readMessage = client.ReceiveStr()
+    sendMessage = ""
     try:
         sendMessage = requestProcessing(readMessage)
     except:
         print("Error!!!")
     finally:
-        client.Send(sendMessage + "\n")
+        client.Send(sendMessage)
     
