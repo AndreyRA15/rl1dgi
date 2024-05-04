@@ -43,7 +43,8 @@ class SyncTcpClient():
 
 if __name__ == '__main__':
     client = SyncTcpClient()
-    client.Connect('127.0.0.1', 30001)
-    client.Query(b'Hello server1')
-
+    client.Connect('127.0.0.1', 5025)
+    client.Query(b'*IDN?\n')
+    client.Send(b"SENS:FREQ:STAR 2e9\n")
+    client.Send(b"SENS:FREQ:STOP 3e9\n")
 
