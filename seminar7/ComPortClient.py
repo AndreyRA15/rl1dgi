@@ -1,7 +1,7 @@
 import serial
 import helper
 
-class ComPortClient():
+class ComPort():
     def Connect(self, portName, baudRate):
         print("Попытка установить соединение", portName)
         try:

@@ -1,8 +1,8 @@
-from ComPortClient import ComPortClient
+from ComPortClient import ComPort
 port = "COM5"
 
 
-client = ComPortClient()
+client = ComPort()
 client.Connect(port, 115200)
 
 def requestProcessing(request:str):
